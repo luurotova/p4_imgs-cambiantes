@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Imagenes</title>
+</head>
+
+<body>
+    <h2>Vartitas de merluza de Voldemort</h2>
+
+    <button class="flechas" id="misFlechas">
+        <img src="img/flechas.svg" alt="flechas">
+    </button>
+
+    <!-- etiqueta pucture -->
+
+    <img id="voldemort_merluzo" src="img/voldemort-triste.jpg" alt="imagen de voldemort">
+
+
+    <figure>
+        <img src="img/voldemort_de_merluza.png" alt="varitas de voldemort">
+        <figcaption>El poder de la magia esta en la varita</figcaption>
+    </figure>
+
+    <!-- javaScript -->
+    <script>
+        /*1. pulso el boton
+        2. Cambia la foto*/
+
+        //1. capturo los elementos que necesito para actuar
+        const btnFlechas = document.querySelector('#misFlechas')
+        console.log(btnFlechas)
+
+        const imgMerluzo = document.querySelector('#voldemort_merluzo')
+        console.log(imgMerluzo)
+
+        //2. añadir evento click al boton flechas
+        btnFlechas.addEventListener('click', cambiarFoto)
+
+        //3. Definir lo que va a pasar cuando haga click
+        function cambiarFoto() {
+
+            //obtener src de la img
+            const ruta = imgMerluzo.getAttribute('src');
+
+            //log
+            console.log('xxxxx')
+
+            //pregunta: si la ruta es X
+            if (ruta == "img/voldemort-triste.jpg") {
+                //haz esto
+                imgMerluzo.src = "img/varitas_voldemort.jpg";
+            }
+            //si no 
+            else {
+                //haz esto otro
+                imgMerluzo.src = "img/voldemort-triste.jpg"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
